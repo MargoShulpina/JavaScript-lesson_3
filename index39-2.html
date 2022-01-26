@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex.39_2</title>
+  
+</head>
+<body>
+  <script>
+    const validateInput = x => {
+      if (isNaN(+x) || x.replace(/\s+/g, '') == "") {
+        alert('Неверный формат введенного значения. Необходимо ввести число.\nДавайте попробуем ещё раз!');
+        return true;
+      }
+      return false;
+    }
+
+    const calcD = (a, b, c) => ((b * b) - (4 * a * c));
+    
+
+    let a = window.prompt('Введите значение переменной a:');
+    while (validateInput(a)) {
+      a = window.prompt('Введите значение переменной a:');
+    }
+
+    let b = window.prompt('Введите значение переменной b:');
+    while (validateInput(b)) {
+        b = window.prompt('Введите значение переменной b:');
+      }
+
+    let c = window.prompt('Введите значение переменной c:');
+    while (validateInput(c)) {
+        c = window.prompt('Введите значение переменной c:');
+      }
+
+    let discriminant = calcD(+a, +b, +c);
+    if (isNaN(discriminant)) {
+      alert("Дискриминант невозможно вычислить.\nПодсказка: введены слишком большие значения переменных.\nРекомендация: обновите страницу и введите значения переменных - числовое значения до 30 символов ");
+    }
+    else alert(`D=${discriminant}`);
+  </script>
+</body>
+</html>
